@@ -54,6 +54,25 @@ asset EventData identified by eventId{
   o label label optional
 }
 
+asset NumericValue identified by title{
+  o String title
+  o Integer male default = 0 // 남자 시청자 수
+  o Integer female default = 0 // 여자 시청자 수
+  o Integer totalView default = 0 // 총 조회수
+  o Integer sessions default = 0 // 세션 수 = 시청자 수
+  o Integer age10 default = 0 
+  o Integer age2024 default = 0
+  o Integer age2529 default = 0
+  o Integer age3034 default = 0
+  o Integer age3539 default = 0
+  o Integer age4044 default = 0
+  o Integer age4549 default = 0
+  o Integer age5054 default = 0
+  o Integer age5559 default = 0
+  o Integer age60  default = 0
+  
+}
+
 enum action {
   o FOCUS
   o BLUR

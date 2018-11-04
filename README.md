@@ -17,7 +17,7 @@ asset ViewData identified by dataId{
   o Integer width
   o Integer height
   o DateTime timestamp // 데이터 수집 당시의 시간
-  o String title // 프로그램명
+  o String title // 프로그램명. 프로그램명이름+차수가 같이 표기되어야 함. ex)나혼자산다-295회
   o String channel // 채널명
   o Double duration // 전체 길이
   o Double uptime // 현재 영상 시간
@@ -61,6 +61,10 @@ enum label{
   o ADCLOSE
 }
 ```
+#### 통계 데이터용 Asset을 설계했다.
+
+
+
 
 ### Participant 항목
 ```
