@@ -5,6 +5,7 @@ dist 폴더에 auto.sh 스크립트 실행하면 rest server 불러올 수 있�
 ### Asset항목
 
 ViewData: 시청 데이터. ID값은 V-sid[0:4]-timestamp 형태로 매번 수집될 때마다 다름.
+```
 asset ViewData identified by dataId{
   o String dataId
   o String uid // 개인식별정보
@@ -21,10 +22,10 @@ asset ViewData identified by dataId{
   o Double duration // 전체 길이
   o Double uptime // 현재 영상 시간
 }
-
+```
 
 EventData: ViewData와 동일한 항목값. ID값은 E-sid[0:4]-timestamp 형태로 매번 수집될 때마다 다름.
-
+```
 asset EventData identified by eventId{
   o String eventId
   o String uid // 개인식별정보
@@ -43,9 +44,9 @@ asset EventData identified by eventId{
   o action action optional
   o label label optional
 }
-
+```
 + enum 형태로 action과 label 정의.
-
+```
 enum action {
   o FOCUS
   o BLUR
@@ -59,10 +60,10 @@ enum label{
   o ADCLICK
   o ADCLOSE
 }
-
+```
 
 ### Participant 항목
-
+```
 participant User identified by sid{
   o String sid
   o String uid // 개인식별정보
@@ -75,7 +76,7 @@ participant User identified by sid{
   o String[] titles
   o String[] channels
 }
-
+```
 User - 세션을 ID값으로 갖는 항목.
 
 ViewDataCreate라는 txn을 통해 ViewDataCreate를 생성할 때 자동으로 만들어진다.
