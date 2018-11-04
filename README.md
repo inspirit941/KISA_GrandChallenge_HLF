@@ -87,4 +87,11 @@ ViewDataCreate라는 txn을 통해 ViewDataCreate를 생성할 때 자동으로 
 
 시청률 데이터 / User 데이터 등을 가져오기 위해 필요한 쿼리.
 
-현재 composer가 제공하는 query에는 aggregation 기능을 제공하지 않는 상황. query로 가져온 array를 프론트 레벨에서 가공해 써야 하는 상황.
+현재 composer가 제공하는 query에는 aggregation 기능을 제공하지 않는 상황. query로 가져온 array를 프론트 레벨에서 가공해 써야 하는 상태다. 예컨대 gender가 남성 / 여성인 값을 불러오는 query를 만들 수는 있지만, 결과로 나온 array의 length를 계산하는 건 불가능하다.
+
+파이썬 플라스크를 사용해서 작업 중이라면, 
+데이터 받은 다음 처리작업을 수행할 파이썬 코드 만들어서 보내줄 수 있음.
+
+- 해당 프로그램의 남성 / 여성 시청자
+- 해당 프로그램의 성별 + 연령별 groupby 시청자 수 top5
+- 정주행율 / 이탈율 수치 제작방법은 고민중.
