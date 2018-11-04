@@ -4,7 +4,7 @@ dist 폴더에 auto.sh 스크립트 실행하면 rest server 불러올 수 있�
 
 ### Asset항목
 
-ViewData: 시청 데이터. ID값은 V-sid[0:4]-timestamp 형태로 매번 수집될 때마다 다름.
+ViewData: 시청 데이터. ID값은 V-sid[4:8]-timestamp 형태로 매번 수집될 때마다 다름.
 ```
 asset ViewData identified by dataId{
   o String dataId
