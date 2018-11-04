@@ -1,8 +1,12 @@
 composer archive create -t dir -n ../
 
-composer network install -a hlf_kisa@0.0.1.bna -c PeerAdmin@hlfv1
+cd ../../
+./startFabric.sh
+cd hlf_kisa/dist/
 
-composer network start -c PeerAdmin@hlfv1 -n hlf_kisa -V 0.0.1 -A admin -S adminpw
+composer network install -a hlf_kisa@0.0.6.bna -c PeerAdmin@hlfv1
+
+composer network start -c PeerAdmin@hlfv1 -n hlf_kisa -V 0.0.6 -A admin -S adminpw
 
 composer card delete -c admin@hlf_kisa
 

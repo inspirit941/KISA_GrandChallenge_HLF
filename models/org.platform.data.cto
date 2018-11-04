@@ -68,9 +68,22 @@ enum label{
   o ADCLOSE
 }
 
+participant User identified by sid{
+  o String sid
+  o String uid // 개인식별정보
+  o Boolean gender // True는 man, False는 Woman
+  o Integer age //나이
+  o String[] url // 페이지 url
+  o String referer optional // 유입경로
+  // o Integer width
+  // o Integer height
+  o DateTime timestamp // 데이터 수집 당시의 시간
+  o String[] titles
+  o String[] channels
+}
+
 
 transaction ViewDataCreate { // ViewDataCreate하는 동시에 Participant User도 생성합니다.
-
   o String uid // 개인식별정보
   o String sid // 세션 데이터
   o Boolean gender // True는 man, False는 Woman
@@ -85,22 +98,27 @@ transaction ViewDataCreate { // ViewDataCreate하는 동시에 Participant User�
   o Double duration // 전체 길이
   o Double uptime // 현재 영상 시간
 }
-
-participant User identified by sid{
-  o String sid
+transaction EventDataCreate {
   o String uid // 개인식별정보
+  o String sid // 세션 데이터
   o Boolean gender // True는 man, False는 Woman
   o Integer age //나이
   o String url // 페이지 url
-  o String referer optional // 유입경로
-  // o Integer width
-  // o Integer height
-  o DateTime timestamp // 데이터 수집 당시의 시간
-  o String[] titles
-  o String[] channels
+  o String referer // 유입경로
+  o Integer width
+  o Integer height
+  //o DateTime timestamp // 데이터 수집 당시의 시간
+  o String title // 프로그램명
+  o String channel // 채널명
+  o Double duration // 전체 길이
+  o Double uptime // 현재 영상 시간
+  o action action optional
+  o label label optional
 }
 
-
+// transaction getData {
+//   o String title
+// }
 
 
 

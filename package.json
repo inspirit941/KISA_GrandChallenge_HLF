@@ -3,7 +3,7 @@
     "composer": "^0.19.13"
   },
   "name": "hlf_kisa",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "description",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/hlf_kisa.bna",

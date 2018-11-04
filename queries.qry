@@ -1,0 +1,108 @@
+query DataBytitle {
+  description: "Returns ViewData based on title"
+  statement:
+    SELECT org.platform.data.ViewData
+      WHERE (title == _$title)
+}
+query MaleBytitle{
+  description: "Returns gender based on title"
+  statement:
+    SELECT org.platform.data.ViewData
+      WHERE (title == _$title AND gender == true)  
+}
+query FemaleBytitle{
+  description: "Returns gender female based on title"
+  statement:
+    SELECT org.platform.data.ViewData
+      WHERE (title == _$title AND gender == false)  
+}
+query DataByChannel{
+  description: "Returns data based on channel"
+  statement:
+    SELECT org.platform.data.ViewData
+      WHERE (channel == _$channel) 
+}
+query UserBytitle{
+  description: "Returns User based on title"
+  statement:
+    SELECT org.platform.data.User
+      WHERE (titles == _$title)
+}
+query UserByChannel{
+  description: "Returns User based on title"
+  statement:
+    SELECT org.platform.data.User
+      WHERE (channels == _$channel)
+}
+// query AllCivils {
+//   description: "Returns all civils in the registry"
+//   statement:
+//     SELECT org.petition.prov.participants.Civil
+// }
+
+// query AllGovernEmployee {
+//   description: "Returns GE"
+//   statement:
+//     SELECT org.petition.prov.participants.GovernEmployee
+// }
+
+// query AllPetitions {
+//   description: "Returns all petitions in the registry"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+// }
+
+// query AllPetitionDepartment {
+//   description: "Returns all departments"
+//   statement:
+//     SELECT org.petition.prov.participants.PetitionDepartment
+// }
+
+// query CompanyByName {
+//   description: "Returns BusCompany by it's name"
+//   statement:
+//     SELECT org.petition.prov.participants.BusCompany
+//       WHERE (BusCompanyName == _$nameInput)
+// }
+
+// query PendingPetitions {
+//   description: "Returns pending petitions"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+//       WHERE (Accepted == false)
+// }
+
+// query AcceptedPetitions {
+//   description: "Returns petitions which are accepted but not resolved yet"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+//       WHERE (Accepted == true AND Resolved == false)
+// }
+
+// query ResolvedPetitions {
+//   description: "Returns resolved petitions in the registry"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+//       WHERE (Resolved == true)
+// }
+
+// query PetitionsByCivilId {
+//   description: "Returns Civil's petitions in the registry"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+//       WHERE (CivilId == _$CivilIdInput) 
+// }
+
+// query PetitionsByBusNo {
+//   description: "Returns Petitions by Bus No"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+//       WHERE (BusNumber == _$BusNoInput)
+// }
+
+// query PetitionByType{
+//   description: "Return Petition by Type"
+//   statement:
+//     SELECT org.petition.prov.petition.Petition
+//       WHERE (Type == _$TypeInput)
+// }
