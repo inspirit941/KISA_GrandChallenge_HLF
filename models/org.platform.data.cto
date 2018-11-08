@@ -28,7 +28,7 @@ asset ViewData identified by dataId{
   o String referer optional // 유입경로
   o Integer width
   o Integer height
-  o DateTime timestamp // 데이터 수집 당시의 시간
+  o Long time // 데이터 수집 당시의 시간
   o String title // 프로그램명
   o String channel // 채널명
   o Double duration // 전체 길이
@@ -37,19 +37,19 @@ asset ViewData identified by dataId{
 
 asset EventData identified by eventId{
   o String eventId
-  o String uid // 개인식별정보
-  o String sid // 세션 데이터
-  o Boolean gender // True는 man, False는 Woman
-  o Integer age //나이
-  o String url // 페이지 url
-  o String referer // 유입경로
+  o String uid 
+  o String sid 
+  o Boolean gender 
+  o Integer age 
+  o String url 
+  o String referer 
   o Integer width
   o Integer height
-  o DateTime timestamp // 데이터 수집 당시의 시간
-  o String title // 프로그램명
-  o String channel // 채널명
-  o Double duration // 전체 길이
-  o Double uptime // 현재 영상 시간
+  o Long time 
+  o String title 
+  o String channel 
+  o Double duration 
+  o Double uptime 
   o action action optional
   o label label optional
 }
@@ -70,7 +70,7 @@ asset NumericValue identified by title{
   o Integer age5054 default = 0
   o Integer age5559 default = 0
   o Integer age60  default = 0
-  
+  o Integer[] ViewPermin
 }
 
 enum action {
@@ -89,14 +89,12 @@ enum label{
 
 participant User identified by sid{
   o String sid
-  o String uid // 개인식별정보
-  o Boolean gender // True는 man, False는 Woman
-  o Integer age //나이
-  o String[] url // 페이지 url
-  o String referer optional // 유입경로
-  // o Integer width
-  // o Integer height
-  o DateTime timestamp // 데이터 수집 당시의 시간
+  o String uid 
+  o Boolean gender 
+  o Integer age default = 0
+  o String[] url 
+  o String referer optional 
+  o DateTime timestamp
   o String[] titles
   o String[] channels
 }
@@ -111,26 +109,26 @@ transaction ViewDataCreate { // ViewDataCreate하는 동시에 Participant User�
   o String referer // 유입경로
   o Integer width
   o Integer height
-  //o DateTime timestamp // 데이터 수집 당시의 시간
+  o Long time // 데이터 수집 당시의 시간
   o String title // 프로그램명
   o String channel // 채널명
   o Double duration // 전체 길이
   o Double uptime // 현재 영상 시간
 }
 transaction EventDataCreate {
-  o String uid // 개인식별정보
-  o String sid // 세션 데이터
-  o Boolean gender // True는 man, False는 Woman
-  o Integer age //나이
-  o String url // 페이지 url
-  o String referer // 유입경로
+  o String uid 
+  o String sid 
+  o Boolean gender 
+  o Integer age 
+  o String url 
+  o String referer 
   o Integer width
   o Integer height
-  //o DateTime timestamp // 데이터 수집 당시의 시간
-  o String title // 프로그램명
-  o String channel // 채널명
-  o Double duration // 전체 길이
-  o Double uptime // 현재 영상 시간
+  o Long time // 데이터 수집 당시의 시간
+  o String title 
+  o String channel 
+  o Double duration 
+  o Double uptime 
   o action action optional
   o label label optional
 }
@@ -140,7 +138,23 @@ transaction EventDataCreate {
 // }
 
 
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
+/**
+ * Write your model definitions here
+ */
 participant SampleParticipant identified by participantId {
   o String participantId
   o String firstName
