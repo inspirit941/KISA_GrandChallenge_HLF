@@ -60,16 +60,26 @@ asset NumericValue identified by title{
   o Integer female default = 0 // 여자 시청자 수
   o Integer totalView default = 0 // 총 조회수
   o Integer sessions default = 0 // 세션 수 = 시청자 수
-  o Integer age10 default = 0 
-  o Integer age2024 default = 0
-  o Integer age2529 default = 0
-  o Integer age3034 default = 0
-  o Integer age3539 default = 0
-  o Integer age4044 default = 0
-  o Integer age4549 default = 0
-  o Integer age5054 default = 0
-  o Integer age5559 default = 0
-  o Integer age60  default = 0
+  o Integer ageM10 default = 0 
+  o Integer ageM2024 default = 0
+  o Integer ageM2529 default = 0
+  o Integer ageM3034 default = 0
+  o Integer ageM3539 default = 0
+  o Integer ageM4044 default = 0
+  o Integer ageM4549 default = 0
+  o Integer ageM5054 default = 0
+  o Integer ageM5559 default = 0
+  o Integer ageM60  default = 0
+  o Integer ageW10 default = 0 
+  o Integer ageW2024 default = 0
+  o Integer ageW2529 default = 0
+  o Integer ageW3034 default = 0
+  o Integer ageW3539 default = 0
+  o Integer ageW4044 default = 0
+  o Integer ageW4549 default = 0
+  o Integer ageW5054 default = 0
+  o Integer ageW5559 default = 0
+  o Integer ageW60  default = 0
   o Integer[] ViewPermin
 }
 
